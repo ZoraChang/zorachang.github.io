@@ -3,14 +3,14 @@
   {
     "pub":"Interactive Map-High-hazard Dams",
     "link":"https://zorachang.github.io/portfolio/U.S.%20dangerous%20dams/",
-    "imglink":"image/dam.jpg",
+    "imglink":"image/dams.jpg",
     "type":"Data visualization",
     "description": "Which state is most threatened by dangerous dams in the U.S.? An interactive map built with Python and JavaScript"
   },
   {
     "pub":"Interactive Map-Gun Homicides",
     "link":"https://zorachang.carto.com/viz/4eb24652-2936-11e7-adb9-0e3ff518bd15/map",
-    "imglink":"image/gunlaw.jpg",
+    "imglink":"image/gunhomicide.jpg",
     "type":"Data visualization",
     "description":"The house districts that voted to loosen Missouri's gun laws aren't the ones battling concentrations of gun homicide"
   },
@@ -19,7 +19,7 @@
   {
     "pub":"Interactive Graphic-Access to College",
     "link":"https://public.tableau.com/profile/publish/Low-incomeaccess/Sheet1#!/publish-confirm",
-    "imglink":"image/tuition.jpg",
+    "imglink":"image/pell.jpg",
     "type":"Data visualization",
     "description":"How Missouri colleges serve the low-income students?"
   },
