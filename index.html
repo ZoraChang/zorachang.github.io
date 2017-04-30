@@ -1,84 +1,76 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-   "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<!DOCTYPE html>
+<html lang="en">
 
 <head>
-	<title>	Personal website </title>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,400i,700|Merriweather:400,400i,700|Roboto|Ubuntu" rel="stylesheet"/>
-  <link rel="stylesheet" type="text/css" href="style.css"/>
-  <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-  <script src="finished.js" type="text/javascript"></script>
-
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Jieqian Zhang - Portfolio">
+    <meta name="keywords" content="Jieqian, Jieqian Zhang, Data, Visualization, Graphics, New York">
+    <meta name="author" content="Jieqian Zhang">
+    <title>Chen Chang</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Playfair+Display:400,700' rel='stylesheet' type='text/css'>
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="img/icon.ico">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
+<script>
+$(document).ready(function() {
+    $.getJSON("js/data.json", function(json) {
+        addRows(json);
+        fillPage(json);
+    });
+})
+</script>
 
 <body>
-<!--This is a comment. It won't show up in your browser, only in the page source-->
-<div id="container">
-<header>
-<h1>Chen Chang</h1>
+    <div class="container intro">
+        
+        <div class="header">
+            <div class="text-center">
+                <h1 class="text-center page-header"><span class="font1">Chen</span><span class="font1"> Chang</span></h1>
+                <p class="text-center intro_text">
+                    <br>I am a graduate student at Missouri Journalism School, and a research assistant at <a href="http://ire.org/nicar/database-library/" target="_blank"> IRE/NICAR Data Library</a>
+                    <br>I was an intern reporter at <a href="https://cn.nytimes.com/" target="_blank"> the New York Times Chinese Edition</a> and <a href="https://blogs.wsj.com/chinarealtime/" target="_blank"> the Wall Street Jounral Beijing Bureau</a>.
+                    <br>I served as the director of  <a href="http://en.cncurrent.com/" target="_blank"> China Current Network</a>, an indendent news organization that was awarded the "Danwei Model Workers 2014" by the Financial Times.
+                    <br>I love coding, writing and reading, beyond the tyranny of here and now.
+                    <br>Find my resume <a href="image/Resume Chen Chang.pdf" target="_blank"> here</a>.
+                    <br>
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-12 col-sm-9 text-center icon">
+        <a href="mailto:changchen0210@gmail.com" target="_blank"><i class="fa fa-envelope fa-2x"></i></a>
+        <a href="https://www.linkedin.com/in/chen-chang-24207161/" target="_blank"><i class="fa fa-linkedin-square fa-2x"></i></a>
+        <a href="https://github.com/zorachang" target="_blank"><i class="fa fa-github fa-2x"></i></a>
+        <a href="https://twitter.com/Ypq7L5qEx3gSgjB" target="_blank"><i class="fa fa-twitter-square fa-2x"></i></a>
+        <a href="https://www.facebook.com/chen.chang.90410" target="_blank"><i class="fa fa-facebook-square fa-2x"></i></a>
 
-<nav>
-     <a class="menu-trigger" href="#">&#9776;</a>
-    <ul class="navigation">
-      <li><a href="https://www.nytimes.com/section/upshot"> The Upshot</a></li>
-      <li><a href="https://fivethirtyeight.com">FiveThrityEight</a></li>
-      <li><a href="oldindex.html">Old Page </a></li>
-    </ul>
-  </nav>
-</header>
-<div class="wrapper">
-<article>
-<div class="image">
-      <a href="mailto:changchen0210@gmail.com">
-           <img src="Me.jpg" alt="a beautiful nght." title="Graduation day!" width="400px" height="400px"/>
-         </a>
-         <p class="caption">Graduation day!</p>
-</div>
-<div class="story">
-  <p class="first"> Hi! This is Chen.</p>
-  <p> I'm a graduate school student at Missouri Journalism school.</p>
-  <p> My favourite book is Gone with the Wind.</p>
-  <p> Contact me: </p>
-<p>Email:changchen0210@gmail.com</p>
-  <p>Phone:573-639-3490</p>
-</div>
-
-</article>
-
-<aside class="aside-1">
-<p class="title">Do not go gentle into that good night</P>
-<P>Dylan Thomas, 1914 - 1953</P>
-
-<P>Do not go gentle into that good night,</p>
-<P>Old age should burn and rave at close of day;</p>
-<P>Rage, rage against the dying of the light. </p>
-  <p>Though wise men at their end know dark is right,</p>
-  <P>Because their words had forked no lightning they</p>
-  <P>Do not go gentle into that good night.</p>
-    <p>Good men, the last wave by, crying how bright</p>
-</aside>
-
-<aside class="aside-2">
-
-  <p>Their frail deeds might have danced in a green bay,</p>
-  <p>Rage, rage against the dying of the light.</p>
-  <p>Wild men who caught and sang the sun in flight,</p>
-  <p>And learn, too late, they grieved it on its way,</p>
-  <p>Do not go gentle into that good night.</p>
-  <p>Grave men, near death, who see with blinding sight</p>
-  <p>Blind eyes could blaze like meteors and be gay,</p>
-  <p>Rage, rage against the dying of the light.</p>
-</aside>
-
-<footer>
-<p>Content copyright &copy; 2017 Chen Chang </p>
-</footer>
-
-</div>
-</div>
+    </div>
+    <div id="portfolio">
+    </div>
 </body>
+<script>
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+ga('create', 'UA-81544002-1', 'auto');
+ga('send', 'pageview');
+</script>
 
 </html>

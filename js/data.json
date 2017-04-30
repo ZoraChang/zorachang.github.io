@@ -1,0 +1,106 @@
+[
+  {
+    "pub":"Interactive Map-Gun Homicides",
+    "link":"https://zorachang.carto.com/viz/4eb24652-2936-11e7-adb9-0e3ff518bd15/map",
+    "imglink":"image/gunlaw.jpg",
+    "type":"Data visualization",
+    "description":"The house districts that voted to loosen Missouri's gun laws aren't the ones battling concentrations of gun homicide"
+  },
+
+
+  {
+    "pub":"Interactive Graphic-Access to College",
+    "link":"https://public.tableau.com/profile/publish/Low-incomeaccess/Sheet1#!/publish-confirm",
+    "imglink":"image/tuition.jpg",
+    "type":"Data visualization",
+    "description":"How Missouri colleges serve the low-income students?"
+  },
+
+  {
+    "pub":"Interactive Map-Homeless Veterans",
+    "link":"  https://zorachang.carto.com/viz/f4885bcc-d95c-11e6-be00-0e3ebc282e83/map",
+    "imglink":"image/homelessvet.jpg",
+    "type":"Data visualization",
+    "description":"Missouri is one of eight states where the population of veterans who are homeless increased despite a national decrease of 17%"
+  },
+
+  {
+    "pub":"MU Field Reporting on the Food System and the Environment",
+    "link":"https://j4502-ss17.github.io/reportingonrace/about.html",
+    "imglink":"image/agriculture.jpg",
+    "type":"Web design",
+    "description":"What Happened to African-American Farmers?Wrote Javascript for the interactive web of 2017 agriculture field-reporting class."
+  },
+
+{
+  "pub":"The Wall Street Journal",
+  "link":"https://blogs.wsj.com/chinarealtime/2016/01/20/chinese-students-shooting-death-in-arizona-sparks-gun-debate-2/#inbox/_blank",
+  "imglink":"image/gun.jpg",
+  "type":"Reporting",
+  "description":"Chinese Student’s Shooting Death in Arizona Sparks Gun Debate"
+},
+{
+  "pub":"The Wall Street Journal",
+  "link":"https://blogs.wsj.com/chinarealtime/2015/12/30/superstition-aint-the-way-chinese-official-fired-over-feng-shui-fervor/",
+  "imglink":"image/fengshui.jpg",
+  "type":"Reporting",
+  "description":"Superstition Ain’t the Way: Chinese Official Fired over Feng Shui Fervor"
+},
+{
+  "pub":"The Wall Street Journal",
+  "link":"https://blogs.wsj.com/chinarealtime/2016/03/30/chinese-golf-club-owner-files-46-million-lawsuit-over-shuttered-course/",
+  "imglink":"image/golf.jpg",
+  "type":"Reporting",
+  "description":"Chinese Golf Course Boss Files $46 Million Lawsuit over Club’s Closure"
+},
+{
+  "pub":"The Wall Street Journal",
+  "link":"https://blogs.wsj.com/chinarealtime/2015/12/01/hazardous-smog-engulfs-beijing-for-fifth-straight-day/",
+  "imglink":"image/smog.jpg",
+  "type":"Reporting",
+  "description":"Hazardous Smog Engulfs Beijing for Fifth Straight Day"
+},
+{
+  "pub":"The Wall Street Journal",
+  "link":"https://blogs.wsj.com/chinarealtime/2016/03/04/beijing-has-best-environment-for-startups-new-survey-says/",
+  "imglink":"image/startup.jpg",
+  "type":"Reporting",
+  "description":"Beijing Has China’s Best Environment for Startups, New Survey Says"
+},
+{
+  "pub":"The Wall Street Journal",
+  "link":"https://blogs.wsj.com/chinarealtime/2016/02/24/chinas-censors-take-another-gay-themed-web-drama-offline/",
+  "imglink":"image/censor.jpg",
+  "type":"Reporting",
+  "description":"China’s Censors Take Another Gay-Themed Web Drama Offline"
+},
+
+{
+  "pub":"The New York Times",
+  "link":"https://sinosphere.blogs.nytimes.com/2015/05/29/director-wang-xiaoshuai-sees-worst-time-for-independent-films-in-china/?_r=1",
+  "imglink":"image/amnesia.jpg",
+  "type":"Reporting",
+  "description":"The increasing demand for commercial blockbusters created a form of market-driven self-censorship that rendered political censorship irrelevant"
+},
+{
+  "pub":"The New York Times",
+  "link":"https://cn.nytstyle.com/culture/20150518/tc18wangxiaoshuai/",
+  "imglink":"image/wangxiaoshuai1.jpg",
+  "type":"Reporting",
+  "description":"Director Wang Xiaoshuai Sees Worst Time for Independent Films in China"
+},
+
+{
+  "pub":"Columbia Missourian",
+  "link":"http://www.columbiamissourian.com/news/local/traffic-fatalities-up-in-boone-county-and-the-state-in/article_58602194-d39e-11e6-a9e6-4fab4e6a4254.html",
+  "imglink":"image/crash.jpg",
+  "type":"Reporting",
+  "description":"Traffic fatalities up in Boone County and the state in 2016"
+},{
+  "pub":"Columbia Missourian",
+  "link":"http://www.columbiamissourian.com/news/local/hardship-pull-of-family-converge-at-local-greyhound-stop/article_aa4c4ec6-c94c-11e6-a46d-2f7b7fc5a5e1.html",
+  "imglink":"image/greyhound.jpg",
+  "type":"Reporting",
+  "description":"Hardship, pull of family converge at local Greyhound stop"
+}
+]
