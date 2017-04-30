@@ -4,7 +4,7 @@
     "link":"https://zorachang.github.io/portfolio/Searchable%20Database_Missouri%20College%20Scorecard/",
     "imglink":"image/scorecarddatabase.jpg",
     "type":"Data visualization",
-    "description": "A searchable and sortable database of Missouri colleges, built with HTML and JavaScript"
+    "description": "A searchable and sortable database of Missouri colleges, built with HTML,CSS and JavaScript"
   },
 
   {
@@ -19,7 +19,7 @@
     "link":"https://zorachang.carto.com/viz/4eb24652-2936-11e7-adb9-0e3ff518bd15/map",
     "imglink":"image/gunhomicide.jpg",
     "type":"Data visualization",
-    "description":"The house districts that voted to loosen Missouri's gun laws aren't the ones battling concentrations of gun homicide. This map is going to be published with a centerpiece on the Trace, a non-profit news outlet devoted gun-related news."
+    "description":"The house districts that voted to loosen Missouri's gun laws aren't the ones plagued with gun homicide(Soon to be published with a centerpiece on the Trace, a national non-profit news outlet devoted gun-related news)."
   },
 
 
@@ -28,7 +28,7 @@
     "link":"https://public.tableau.com/profile/publish/Missouricollegeaccessforlow-incomestudents/Sheet1#!/publish-confirm",
     "imglink":"image/pell.jpg",
     "type":"Data visualization",
-    "description":"How Missouri colleges serve the low-income students?"
+    "description":"How Missouri colleges serve the low-income students? An interactive scatter plot built with Tableau"
   },
 
   {
@@ -40,11 +40,11 @@
   },
 
   {
-    "pub":"MU Field Reporting on the Food System and the Environment",
+    "pub":"Web Design-MU Field Reporting on the African-American Farmers",
     "link":"https://j4502-ss17.github.io/reportingonrace/about.html",
     "imglink":"image/agriculture.jpg",
     "type":"Web design",
-    "description":"What Happened to African-American Farmers?Wrote Javascript for the interactive web of 2017 agriculture field-reporting class."
+    "description":"Spring 2017 Field-Reporting Trip website. Responsible for building slideshow with Javascript"
   },
 
 {
