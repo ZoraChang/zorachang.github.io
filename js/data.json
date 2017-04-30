@@ -3,7 +3,7 @@
   {
     "pub":"Interactive Map-High-hazard Dams",
     "link":"https://zorachang.github.io/portfolio/U.S.%20dangerous%20dams/",
-    "imglink":"image/gunlaw.jpg",
+    "imglink":"image/dam.jpg",
     "type":"Data visualization",
     "description": "Which state is most threatened by dangerous dams in the U.S.? An interactive map built with Python and JavaScript"
   },
