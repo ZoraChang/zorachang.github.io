@@ -1,4 +1,12 @@
 [
+
+  {
+    "pub":"Interactive Map-High-hazard Dams",
+    "link":"https://zorachang.github.io/2016U.S.-dangerous-dams/",
+    "imglink":"image/gunlaw.jpg",
+    "type":"Data visualization",
+    "description": "Which state has more dangerous dams in the U.S.? An interactive map built with Python and JavaScript"
+  },
   {
     "pub":"Interactive Map-Gun Homicides",
     "link":"https://zorachang.carto.com/viz/4eb24652-2936-11e7-adb9-0e3ff518bd15/map",
