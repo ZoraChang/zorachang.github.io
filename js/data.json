@@ -1,4 +1,11 @@
 [
+  {
+    "pub":"Interactive Database-College Scorecard",
+    "link":"https://zorachang.github.io/portfolio/U.S.%20dangerous%20dams/",
+    "imglink":"image/scorecarddatabase.jpg",
+    "type":"Data visualization",
+    "description": "A searchable and sortable database of Missouri colleges, built with HTML and JavaScript"
+  },
 
   {
     "pub":"Interactive Map-High-hazard Dams",

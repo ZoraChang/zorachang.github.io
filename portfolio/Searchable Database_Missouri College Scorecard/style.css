@@ -1,0 +1,67 @@
+<style>
+/*table {
+    font-size: 12px;
+    font-family: Arial, Helvetica, sans-serif;
+float: left
+}
+table th, table td {
+    text-align: center;
+}
+
+
+
+th, td {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 14px;
+}*/
+
+table {
+  font-size: 12px;
+  border: 1px solid #CCC;
+  font-family: Arial, Helvetica, sans-serif;
+}
+table td {
+  padding: 4px;
+  margin: 3px;
+  border: 1px solid #CCC;
+}
+table th {
+  background-color: #104E8B;
+  color: #FFF;
+  font-weight: bold;
+}
+
+label {
+    width: 100%;
+    text-align: left;
+}
+
+table th {
+    font-weight: bold;
+}
+
+table thead th {
+    vertical-align: middle;
+}
+
+label, input, button, select, textarea {
+    line-height: 30px;
+}
+input, textarea, select, .uneditable-input {
+    height: 25px;
+    line-height: 25px;
+}
+
+select {
+    width: 100px;
+}
+
+.dataTables_length {
+    padding-left: 10px;
+}
+.dataTables_filter {
+    padding-right: 10px;
+}
+
+</style>
