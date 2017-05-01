@@ -1,10 +1,11 @@
 [
-  {
-    "pub":"Interactive Database-College Scorecard",
-    "link":"https://zorachang.github.io/portfolio/Searchable%20Database_Missouri%20College%20Scorecard/",
-    "imglink":"image/scorecarddatabase.jpg",
+  
+ {
+    "pub":"Python Visulization-College Upward Mobility",
+    "link":"https://github.com/ZoraChang/zorachang.github.io/blob/master/portfolio/Missouri%20College%20Scorecard_python%20visualization/MO%20college_scorecard%20Python%20Visualization.ipynb",
+    "imglink":"image/mobility.jpg",
     "type":"Data visualization",
-    "description": "A searchable and sortable database of Missouri colleges, built with HTML,CSS and JavaScript"
+    "description": " Visual analysis of the upward mobility of Missouri colleges, built with Python visulization libraries"
   },
 
   {
@@ -14,6 +15,8 @@
     "type":"Data visualization",
     "description": "Which state is most threatened by dangerous dams in the U.S.? An interactive map built with Python and JavaScript"
   },
+
+
   {
     "pub":"Interactive Map-Gun Homicides",
     "link":"https://zorachang.carto.com/viz/4eb24652-2936-11e7-adb9-0e3ff518bd15/map",
@@ -22,7 +25,13 @@
     "description":"The house districts that voted to loosen Missouri's gun laws aren't the ones plagued with gun homicide(Soon to be published with a centerpiece on the Trace, a national non-profit news outlet devoted gun-related news)"
   },
 
-
+{
+    "pub":"Interactive Database-College Scorecard",
+    "link":"https://zorachang.github.io/portfolio/Searchable%20Database_Missouri%20College%20Scorecard/",
+    "imglink":"image/scorecard2.jpg",
+    "type":"Data visualization",
+    "description": "A searchable and sortable database of Missouri colleges, built with HTML,CSS and JavaScript"
+  },
   {
     "pub":"Interactive Graphic-Access to College",
     "link":"https://public.tableau.com/profile/publish/Missouricollegeaccessforlow-incomestudents/Sheet1#!/publish-confirm",
