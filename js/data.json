@@ -1,9 +1,9 @@
 [
-  
+
  {
     "pub":"Python Visulization-College Upward Mobility",
     "link":"https://github.com/ZoraChang/zorachang.github.io/blob/master/portfolio/Missouri%20College%20Scorecard_python%20visualization/MO%20college_scorecard%20Python%20Visualization.ipynb",
-    "imglink":"image/mobility.jpg",
+    "imglink":"image/mobility.png",
     "type":"Data visualization",
     "description": " Visual analysis of the upward mobility of Missouri colleges, built with Python visulization libraries"
   },
@@ -28,7 +28,7 @@
 {
     "pub":"Interactive Database-College Scorecard",
     "link":"https://zorachang.github.io/portfolio/Searchable%20Database_Missouri%20College%20Scorecard/",
-    "imglink":"image/scorecarddatabase.jpg",
+    "imglink":"image/scorecarddatabase.png",
     "type":"Data visualization",
     "description": "A searchable and sortable database of Missouri colleges, built with HTML,CSS and JavaScript"
   },
