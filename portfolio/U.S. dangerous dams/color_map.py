@@ -16,12 +16,12 @@ colors = ["#F1EEF6", "#D7B5D8", "#DF65B0", "#DD1C77", "#980043"]
 path_style = 'fill:#d0d0d0;fill-rule:nonzero;stroke:#000000;stroke-width:0.178287;fill:'
 for p in paths:
 
-    # if p['id'] not in ["State_Lines", "separator"]:
+    if p['id'] not in ["State_Lines", "separator"]:
 
-    #     try:
-    #         count = pws[p['id']]
-    #     except:
-    #         continue
+        try:
+             count = pws[p['id']]
+        except:
+            continue
         #print str(float(len(colors)-1) * float(count - 0) / float(119 - 0))
 
         # if count > 120:
