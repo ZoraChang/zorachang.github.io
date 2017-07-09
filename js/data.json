@@ -1,10 +1,19 @@
 [
 
  {
+    "pub":"Sixth Tone",
+    "link":"http://www.sixthtone.com/topics/1000441/Hu%20Line",
+    "imglink":"image/huline.png",
+    "type":"Data Analysis&Visualization",
+    "description": "Collect, clean, analyze and visualze datasets for Huhuanyong Line stories"
+  },
+
+
+ {
     "pub":"Python Visulization-College Upward Mobility",
     "link":"https://github.com/ZoraChang/zorachang.github.io/blob/master/portfolio/Missouri%20College%20Scorecard_python%20visualization/MO%20college_scorecard%20Python%20Visualization.ipynb",
     "imglink":"image/mobility.png",
-    "type":"Data visualization",
+    "type":"Data Analysis&Visualization",
     "description": " Visual analysis of the upward mobility of Missouri colleges, built with Python visulization libraries"
   },
 
