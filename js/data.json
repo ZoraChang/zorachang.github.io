@@ -1,11 +1,22 @@
+
+
 [
+
+  {
+     "pub":"to be published on Columbia Missourian",
+     "link":"http://www.sixthtone.com/topics/1000441/Hu%20Line",
+     "imglink":"image/hiddendam.png",
+     "type":"Investigative Reporting & Data Visualization",
+     "description": "[Unfinished]Investigated Missouri's 4000 unregulated dams and developed a digital story-telling with JavaScript, D3"
+   },
+
 
  {
     "pub":"Sixth Tone",
     "link":"http://www.sixthtone.com/topics/1000441/Hu%20Line",
     "imglink":"image/huline.png",
     "type":"Data Analysis & Visualization",
-    "description": "Collect, clean, analyze and visualze datasets for Huhuanyong Line stories"
+    "description": "Collected, cleaned, analyzed and visualzed datasets for Huhuanyong Line stories"
   },
 
 
@@ -14,7 +25,7 @@
     "link":"https://zorachang.github.io/portfolio/sixthtone%20graphics/index.html",
     "imglink":"image/courier published.png",
     "type":"Data Analysis & Visualization",
-    "description": "Make graphics with R and Illustrator"
+    "description": "Made graphics with R and Illustrator"
   },
 
 

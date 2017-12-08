@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html >
+<head>
+
+  		<title>Missourian Infographics</title>
+  		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" / >
+
+  		<!-- THESE ARE THE CSS FILES I ADDED -->
+        <link rel="stylesheet" href="style.css">
+  		<link rel="stylesheet" href="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.css" />
+  		<link rel="stylesheet" href="http://libs.cartocdn.com/cartodb.js/v3/3.15/themes/css/cartodb.css" />
+  		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Domine:400,700">
+      <script src="http://d3js.org/d3.v4.min.js" charset="utf-8"></script>
+    <script src="https://d3js.org/topojson.v1.min.js"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+  <script src="http://d3-legend.susielu.com/d3-legend.min.js"></script>
+  <script src="//d3js.org/queue.v1.min.js"></script>
+
+                  <!-- THESE ARE THE JAVASCRIPT FILES I ADDED -->
+  				<script src="http://bloximages.newyork1.vip.townnews.com/columbiamissourian.com/content/tncms/live/components/jquery/resources/scripts/jquery.min.js?_dc=1423174924"></script>
+   				 <script type="text/javascript" src="http://www.columbiamissourian.com/app/projects/Project_files/js/jquery-1.9.1.js"></script>
+  				<script type="text/javascript" src="http://www.columbiamissourian.com/app/projects/Project_files/js/jquery-ui-1.10.2.custom.js"></script>
+  				<script type="text/javascript" src="http://www.columbiamissourian.com/app/projects/Project_files/js/jquery.ui.tooltip.js"></script>
+  				<script type="text/javascript" src="http://www.columbiamissourian.com/app/projects/Project_files/js/jquery.cycle.all.js"></script>
+
+  				<script src="http://cdn.leafletjs.com/leaflet-0.7.3/leaflet.js"></script>
+  				<script src="http://libs.cartocdn.com/cartodb.js/v3/3.15/cartodb.js"></script>
+  				<!-- TAKE THESE OUT TO PUBLISH ON COLUMBIAMISSOURIAN.COM -->
+  				<script src="http://code.highcharts.com/highcharts.js"></script>
+  				<script src="http://code.highcharts.com/modules/exporting.js"></script>
+  				<script type="text/javascript" src="http://media.columbiamissourian.com/highcharts_restyle/missourian.js"></script>
+      <!-- <link rel="stylesheet" href="css/style.css">
+      <script src="http://d3js.org/d3.v3.min.js"></script>
+      <script src="http://d3js.org/colorbrewer.v1.min.js"></script>
+      <script
+        src="https://code.jquery.com/jquery-3.2.1.min.js"
+        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+
+      <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css">
+
+      <script type="text/javascript" charset="utf8" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script type="text/javascript" src="https://static01.nyt.com/js/common.js"></script>
+      <script type="text/javascript" src="https://static01.nyt.com/js/common/screen/DropDown.js"></script>
+      <script type="text/javascript" src="https://static01.nyt.com/js/fileit.js"></script>
+      <script type="text/javascript" src="https://static01.nyt.com/js/util/tooltip.js"></script>
+      <script type="text/javascript" src="https://static01.nyt.com/js/common/sharetools/2.0/shareTools.js"></script>
+      <script type="text/javascript" src="https://static01.nyt.com/js/app/save/crossPlatformSave.js"></script> -->
+</head>
+<style>
+/*! jQuery UI - v1.10.2 - 2013-03-17
+* http://jqueryui.com
+* Includes: jquery.ui.core.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css
+* Copyright 2013 jQuery Foundation and other contributors Licensed MIT */
+
+.g-table {
+  margin: 6px 10px 20px 10px;
+  font: 11px/15px sans-serif;
+  -webkit-text-size-adjust: none;
+}
+
+.g-table-head {
+  font: 13px/17px sans-serif;
+}
+
+.g-table-head .g-table-cell {
+  height: 70px;
+  cursor: pointer;
+}
+
+.g-table-row:after {
+  display: block;
+  content: "";
+  clear: left;
+}
+
+.g-table-body {
+  margin-top: 6px;
+  position: relative;
+}
+
+.g-table-head,
+.g-table-body {
+  padding-bottom: 6px;
+  border-bottom: solid 1px #ccc;
+}
+
+.g-table-body .g-table-row {
+  position: absolute;
+  width: 100%;
+}
+.g-table-cell {
+float: left;
+position: relative;
+overflow: hidden;
+}
+
+.g-table-bar,
+.g-table-label {
+-webkit-transition: width .5s ease;
+-moz-transition: width .5s ease;
+-ms-transition: width .5s ease;
+-o-transition: width .5s ease;
+transition: width .5s ease;
+}
+
+.g-table-body .g-table-cell {
+height: 19px;
+line-height: 19px;
+}
+
+.g-table-body .g-table-row {
+-webkit-transition: top .5s ease;
+-moz-transition: top .5s ease;
+-ms-transition: top .5s ease;
+-o-transition: top .5s ease;
+transition: top .5s ease;
+}
+
+.g-table-bar {
+position: absolute;
+height: 100%;
+background: rgba(120,120,120,.5);
+}
+
+/*.g-table-label {
+position: absolute;
+right: 6px;
+}*/
+
+.g-table-label {
+position: relative;
+right: -20px;
+}
+
+.g-table-cell-familyAfter .g-table-label,
+.g-table-cell-individualAfter .g-table-label {
+right: -4px;
+width: 0;
+color: #999;
+}
+
+.g-table-body .g-table-row:hover .g-table-bar {
+height: 18px;
+border-bottom: solid 1px rgba(0,0,0,.4);
+}
+
+.g-table-body .g-table-row:hover,
+.g-table-body .g-table-row:hover .g-table-cell-state,
+.g-table-body .g-table-row:hover .g-table-label,
+.g-table-body-average,
+.g-table-body-average .g-table-label {
+font-weight: bold;
+color: #000;
+}
+
+.g-table-body:not(:last-of-type) {
+border-bottom: dashed 1px #ccc;
+}
+.g-table-column-ascending:after,
+.g-table-column-descending:after {
+  padding-left: 4px;
+}
+
+.g-table-column-ascending:after {
+  content: "\0025B2";
+}
+
+.g-table-column-descending:after {
+  content: "\0025BC";
+}
+.g-table-cell {
+width: 140px;
+}
+
+.g-table-cell-state {
+font-size: 12px;
+width: 210px;
+}
+
+.g-table-cell- {
+width: 320px;
+}
+
+.g-table-cell-Budget {
+width: 320px;
+}
+
+.g-table-cell-NIDdam .g-table-bar,
+.g-table-cell-Budget .g-table-bar {
+background: rgba(185,185,185,.5);
+}
+.g-instruction {
+margin: 34px 10px 0 0;
+font: oblique 11px sans-serif;
+color: #aaa;
+text-align: right;
+}
+
+
+h1 {
+    line-height: 1.2em;
+}
+
+p.body {
+  color: #444;
+    font-size: 16px;
+    line-height: 27px;
+    margin-bottom: 24px;
+}
+
+.domine {
+  font-family:Domine;
+}
+
+
+.clear {clear: both;}
+
+.centered {
+    text-align: center;
+    margin: 0 0 25px 0;
+    font-family: inerit;
+    line-height: 1.5em;
+}
+
+/* ABOUT THE SINGLE-DOUBLE-TRIPLE CLASSES */
+
+.single {
+    width: 100%;
+    height: auto;
+    margin: auto;
+}
+
+.double {
+    width: 47%;
+     min-width: 270px;
+    height: auto;
+    margin: auto;
+    padding: 0 3% 0 0;
+    float: left;
+}
+
+.triple {
+    width: 30%;
+    min-width: 270px;
+    height: auto;
+    margin: auto;
+    padding: 0 3% 0 0;
+    float: left;
+}
+
+/* ALL ABOUT THE GRAPHIC DIV */
+
+.graphic{
+    width: 100%;
+    height: auto;
+    margin: 30px auto 0 auto ;
+}
+
+.graphic h4 {
+    padding: 0;
+    margin: 0 0 4px 0;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: bold;
+    font-size: 1.3em;
+    line-height: 1.3em;
+    }
+
+.graphic p, .graphic2 p {
+    width: 100%;
+    padding: 0;
+    margin: 0 0 8px 0;
+    font-family:  'Open Sans', sans-serif;
+    font-size: 1em;
+    line-height: 1.3em;
+    color: #666;
+    }
+
+.graphic img{
+    width: 100%;
+    height: auto;
+    }
+
+.graphic div{
+    /*width: 100%;*/
+    height: auto;
+}
+
+/* NUMBERED DOTS */
+
+.dots{
+    position: relative;
+}
+
+.dot {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    vertical-align: middle;
+    padding: 0;
+    line-height: 20px;
+    font-family: sans-serif;
+    font-size: 14px;
+    width: 20px !important;
+    height: 20px !important;
+    border-radius: 20px;
+    border: 1px solid #ffffff;
+    box-shadow: 1px 1px 1px #000000;
+    cursor: pointer;
+    z-index: 999;
+}
+
+
+
+
+
+/* ROLLOVER BOX */
+
+.ui-tooltip {
+    padding: 10px 20px;
+    color: black;
+    background-color: white;
+    font: 14px  'Open Sans', sans-serif;
+    box-shadow: 0 0 7px black;
+}
+
+
+
+/* 1-2-3 PANEL STYLES */
+
+.tab-nav a {
+    background: none repeat scroll 0 0 white;
+    border: 1px solid #CCCCCC;
+    color: #444444;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 0 -1px 0 0;
+    padding: 2px 10px 2px;
+    text-decoration: none;
+    font-family: sans-serif;
+}
+
+.tab-nav a.activeSlide {
+    background: none repeat scroll 0 0 #E8E8E8;
+    color: #000000;
+}
+
+.tab-nav {
+    width: auto !important;
+    float: left;
+    margin: 10px 10px 0 0;
+    height: 44px;
+}
+
+.tab-wrapper {
+    margin: 0 auto -1px auto;
+    height: 20px;
+}
+
+#panel_graphic {
+    margin: 10px 0 0 0;
+    position: relative;
+    width: 100% !important;
+}
+
+.panel-line {
+    border-top: 1px solid #FFFFFF;
+    line-height: 0;
+}
+
+.panel {
+    position: relative;
+    display: block;
+    left: 0;
+    opacity: 1;
+    padding: 5px 0 0 0;
+    z-index: 4;
+    background-color: white;
+}
+
+.title{
+  font-family: 'Open Sans', sans-serif;
+  font-size: 1em;
+  width: 450px;
+  margin-left: 40px;
+}
+
+
+
+#parent {
+  position: absolute;
+  width: 30%;
+}
+
+.dots #parent {
+  position: absolute;
+  width: auto;
+}
+
+#popup {
+  margin: 5% 0;
+  border: solid 1px #666666;
+  background-color: white;
+  padding: 5%;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 0.9em;
+  line-height: 1.2em;
+  max-width: 250px;
+}
+
+
+#parent #popup {
+  display: none;
+}
+
+#parent:hover #popup {
+  display: block;
+  z-index: 5000;
+}
+
+#parent:hover {
+  z-index: 5000;
+}
+
+
+/*CARTO DB MAP*/
+#cartodb-map {
+    width:100%;
+    height:400px;
+}
+
+/* RESPONSIVE STYLE BREAKPOINT REFERENCE
+  big desktops: 1400px;
+  most laptops: 1100px;
+  iPad portrait: 768px;
+  phones: 480px;
+  smaller phones: 300px;*/
+
+@media (max-width: 1400px){
+  /*use these classes to switch out three levels of images with hard-to-read text*/
+  .hide-desktop {display:block;}
+  .hide-desktop {display:none;}
+  .hide-tablet {display:none;}
+}
+
+@media (max-width: 1100px){
+
+}
+
+@media (max-width: 768px){
+  .hide-desktop {display:none;}
+  .hide-tablet {display:block;}
+  .double {
+    width:100%;
+  }
+  .triple {
+    width:100%;
+  }
+}
+
+@media (max-width: 480px){
+  .hide-desktop {display:none;}
+  .hide-tablet {display:none;}
+  .hide-mobile {display:block;}
+
+  /*making fonts a bit smaller*/
+  .graphic h4 {font-size:1.1em;}
+  .graphic p {font-size:.9em;}
+}
+
+@media (max-width: 300px){
+
+}
+
+
+
+</style>
+
+</head>
+
+
+<body id="site" class="base">
+
+<div id="main" style="max-width: 930px; margin: auto;">
+
+<!-- ////////////////////FILL OUT BELOW FOR HEADLINE AND YOUR INFO ////////////////////////////// -->
+<div class="centered">
+    <h1 class='domine'>Missouri's hidden dams</h1>
+    <p class="body domine">Missouri has 1457 high-hazard dams last year, leading the nation since 2010. Nearly 1000 of them are unregulated.
+No one is required to inspect or repair them, even if the failure may kill people.
+Missouri dam law exempts the dams that are less than 35 feet tall, agriculture dams and federal-regulated dams. There has been no change in Missouri dam regulation since the 2005 Taum Sauk Dam Failure. Several bills tried to modify the dam safety law to increase the number of regulated dams, but none of them passed. Thus, around 4700 dams remain in limbo.</p>
+    <div class="byline">By <a href="/accounts/profiles/xxxxx/">xxxxxxxx</a>, <a href="/accounts/profiles/xxxxx/">xxxxxx</a> | December 3, 2017</div>
+    <hr />
+</div>
+
+
+<!-- //////////////////BEGINNING OF GRAPHIC TEMPLATE ELEMENTS /////////////////////// -->
+
+
+<!-- /////////////////////// BEGIN SINGLE LAYER///////////////////////////-->
+<p>Hazardous dams in Missouri</p>
+<iframe width="100%" height="520" frameborder="0" src="https://zorachang.carto.com/builder/515018cf-0736-4608-843d-dab403e132c3/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+<p>Dam Safety Program state by state</p>
+<div class="g-graphic">
+<div class="g-instruction">
+Click a column header to sort.
+</div>
+<div class="g-table">
+<div class="g-table-head">
+<div class="g-table-row">
+<div data-key="state" class="g-table-cell" style="width:210px;">
+<div class="g-table-column" style="position:absolute;bottom:0;">State</div>
+</div>
+
+<div data-key="Budget" class="g-table-cell" style="width:210px;">
+<div class="g-table-column" style="position:absolute;bottom:0;">NID dams</div>
+</div>
+
+<div data-key="Budget" class="g-table-cell" style="width:210px;">
+<div class="g-table-column" style="position:absolute;bottom:0;">State regulated dams</div>
+</div>
+
+<div data-key="Budget" class="g-table-cell" style="width:210px;">
+<div class="g-table-column" style="position:absolute;bottom:0;">Budget</div>
+</div>
+
+<!-- <div data-key="Budget" class="g-table-column" style="font-size:13px;line-height:32px;">NID dams<div>
+<div class="g-table-column" style="font-size:13px;line-height:32px;">State regulated dams</div>
+<div data-key="Budget" class="g-table-column" style="width:450px;border-top:solid 1px #000;margin-right:10px;"><div class="g-table-column" style="font-size:13px;line-height:32px;">Budget</div>
+</div> -->
+</div>
+</div>
+<div class="g-table-body g-table-body-average"></div>
+<div class="g-table-body g-table-body-states"></div>
+</div>
+</div>
+<script src="https://static01.nyt.com/newsgraphics/2013/09/24/health-care-premiums/fa87fdc4145b4667df3cf9db68a19325f19a884d/lib.js"></script>
+<script>(function() {
+
+var rowHeight = 20;
+
+var columns = [
+"NIDdam",
+"StateRegulatedDam",
+"Budget",
+// "Staff"
+];
+
+var sortKey = "Budget",
+sortOrder = d3.ascending;
+
+var formatCurrency = d3.format("$,.0f"),
+formatNumber = d3.format(",.0f");
+
+
+var x = d3.scale.linear()
+.domain([0, 13100])
+.range([0, 320]);
+// .domain([0, 51000000)
+// .range([0, 320]);
+
+d3.tsv("https://raw.githubusercontent.com/ZoraChang/data/master/damdata3.tsv", type, function(error, states) {
+var averageRow = d3.select(".g-table-body-average")
+  .style("height", rowHeight + "px")
+.append("div")
+  .datum(states.pop())
+  .attr("class", "g-table-row");
+
+var stateRow = d3.select(".g-table-body-states")
+  .style("height", states.length * rowHeight + "px")
+.selectAll(".g-table-row")
+  .data(states.sort(function(a, b) { return sortOrder(a[sortKey], b[sortKey]); }))
+.enter().append("div")
+  .attr("class", "g-table-row")
+  .style("top", function(d, i) { return i * rowHeight + "px"; });
+
+var row = d3.selectAll(".g-table-body .g-table-row");
+
+row.append("div")
+  .attr("class", "g-table-cell g-table-cell-state")
+  .text(function(d) { return d.state; });
+
+columns.forEach(function(c) {
+row.append("div")
+    .attr("class", "g-table-cell g-table-cell-" + c)
+  .append("div")
+    .datum(function(d) { return d[c]; })
+    .attr("class", "g-table-bar")
+  .append("div")
+    .attr("class", "g-table-label")
+    .text(function(d, i) { return (i ? formatNumber : formatCurrency)(d); });
+});
+
+var bar = row.selectAll(".g-table-bar")
+  .style("width", 0);
+
+row.transition()
+  .delay(function(d, i) { return i * 8; })
+.selectAll(".g-table-bar")
+  .each("start", function(d) { this.style.width = x(d) + "px"; });
+
+var columnLabel = d3.selectAll(".g-table-head .g-table-cell")
+  .datum(function() { return this.getAttribute("data-key"); })
+  .on("click", clicked)
+.select(".g-table-column")
+  .classed("g-table-column-" + (sortOrder === d3.ascending ? "ascending" : "descending"), function(d) { return d === sortKey; });
+
+function clicked(key) {
+d3.event.preventDefault();
+
+columnLabel
+    .classed("g-table-column-" + (sortOrder === d3.ascending ? "ascending" : "descending"), false);
+
+if (sortKey === key) sortOrder = sortOrder === d3.ascending ? d3.descending : d3.ascending;
+else sortKey = key;
+
+states
+    .sort(function(a, b) { return sortOrder(a[sortKey], b[sortKey]); })
+    .forEach(function(d, i) { d.index = i; });
+
+columnLabel
+    .classed("g-table-column-" + (sortOrder === d3.ascending ? "ascending" : "descending"), function(d) { return d === sortKey; });
+
+stateRow.transition()
+    .delay(function(d) { return d.index * 8; })
+    .each("start", function(d) { return this.style.top = d.index * rowHeight + "px"; });
+}
+});
+
+
+function type(d) {
+d.NIDdam = +d.NIDdam;
+d.StateRegulatedDam = +d.StateRegulatedDam;
+d.Budget = +d.Budget;
+// d.Staff = +d.Staff;
+return d;
+}
+
+})()</script>
