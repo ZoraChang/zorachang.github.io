@@ -55,6 +55,7 @@
 * Includes: jquery.ui.core.css, jquery.ui.resizable.css, jquery.ui.selectable.css, jquery.ui.accordion.css, jquery.ui.autocomplete.css, jquery.ui.button.css, jquery.ui.datepicker.css, jquery.ui.dialog.css, jquery.ui.menu.css, jquery.ui.progressbar.css, jquery.ui.slider.css, jquery.ui.spinner.css, jquery.ui.tabs.css, jquery.ui.tooltip.css
 * Copyright 2013 jQuery Foundation and other contributors Licensed MIT */
 
+
 .g-table {
   margin: 6px 10px 20px 10px;
   font: 11px/15px sans-serif;
@@ -120,7 +121,8 @@ transition: top .5s ease;
 }
 
 .g-table-bar {
-position: absolute;
+position: relative;
+width:100%;
 height: 100%;
 background: rgba(120,120,120,.5);
 }
@@ -159,7 +161,7 @@ color: #000;
 .g-table-body:not(:last-of-type) {
 border-bottom: dashed 1px #ccc;
 }
-.g-table-column-ascending:after,
+/*.g-table-column-ascending:after,
 .g-table-column-descending:after {
   padding-left: 4px;
 }
@@ -170,9 +172,10 @@ border-bottom: dashed 1px #ccc;
 
 .g-table-column-descending:after {
   content: "\0025BC";
-}
+}*/
 .g-table-cell {
 width: 140px;
+/*width: 25%;*/
 }
 
 .g-table-cell-state {
@@ -182,18 +185,24 @@ width: 210px;
 
 .g-table-cell- {
 width: 320px;
+/*width: 25%;*/
 }
 
 .g-table-cell-Budget {
 width: 320px;
+/*width: 45%;*/
 }
 
 .g-table-cell-NIDdam .g-table-bar,
 .g-table-cell-Budget .g-table-bar {
 background: rgba(185,185,185,.5);
+width: 320px;
+/*width: 30%;*/
 }
+
 .g-instruction {
-margin: 34px 10px 0 0;
+margin: 0 0 0 0;
+margin-bottom: 0;
 font: oblique 11px sans-serif;
 color: #aaa;
 text-align: right;
@@ -492,7 +501,7 @@ p.body {
     <p class="body domine">Missouri has 1457 high-hazard dams last year, leading the nation since 2010. Nearly 1000 of them are unregulated.
 No one is required to inspect or repair them, even if the failure may kill people.
 Missouri dam law exempts the dams that are less than 35 feet tall, agriculture dams and federal-regulated dams. There has been no change in Missouri dam regulation since the 2005 Taum Sauk Dam Failure. Several bills tried to modify the dam safety law to increase the number of regulated dams, but none of them passed. Thus, around 4700 dams remain in limbo.</p>
-    <div class="byline">By <a href="/accounts/profiles/xxxxx/">xxxxxxxx</a>, <a href="/accounts/profiles/xxxxx/">xxxxxx</a> | December 3, 2017</div>
+    <div class="byline">By <a href="https://twitter.com/Ypq7L5qEx3gSgjB">Chen Chang</a> | December 3, 2017</div>
     <hr />
 </div>
 
@@ -501,9 +510,18 @@ Missouri dam law exempts the dams that are less than 35 feet tall, agriculture d
 
 
 <!-- /////////////////////// BEGIN SINGLE LAYER///////////////////////////-->
-<p>Hazardous dams in Missouri</p>
+<div class="single">
+			<div class="graphic">
+        <h4>Hazardous dams in Missouri</h4>
+<p class="body">Find the hazardous dams in Missouri. Missouri has 1457 high-hazard dams in 2016. Around 1000 high-hazard dams are not regulated. High-hazard means the failure of dams may kill people. Significant hazard means the failure of dams may cause property loss.</p>
 <iframe width="100%" height="520" frameborder="0" src="https://zorachang.carto.com/builder/515018cf-0736-4608-843d-dab403e132c3/embed" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
-<p>Dam Safety Program state by state</p>
+</div>
+</div>
+
+<div class="single">
+			<div class="graphic">
+<h4>Dam Saftey Program in different states</h4>
+<p class="body">Find the inventoried dams, state regulated dams and budget in Missouri and compare with other states. NID dams means the count of dams in the 2016 National Inventory of Dams (NID) database. Only 13% of dams in Missouri are regulated by the Department of Natural Resources, with a budget of around five thousand dollars in 2016. </p>
 <div class="g-graphic">
 <div class="g-instruction">
 Click a column header to sort.
@@ -511,20 +529,25 @@ Click a column header to sort.
 <div class="g-table">
 <div class="g-table-head">
 <div class="g-table-row">
-<div data-key="state" class="g-table-cell" style="width:210px;">
-<div class="g-table-column" style="position:absolute;bottom:0;">State</div>
+  <!-- <div data-key="state" class="g-table-cell" style="width:210px;"> -->
+<div data-key="state" class="g-table-cell">
+<!-- <div class="g-table-column" style="position:absolute;bottom:0;">State</div> -->
+<div class="g-table-column" style="position: absolute; padding-left:4px;bottom:0;">State</div>
 </div>
 
-<div data-key="Budget" class="g-table-cell" style="width:210px;">
-<div class="g-table-column" style="position:absolute;bottom:0;">NID dams</div>
+<div data-key="NIDdam" class="g-table-cell" style="width:140px;">
+<div class="g-table-column" style="position: absolute;padding-left: 5em;bottom:0;">NID dams</div>
 </div>
 
-<div data-key="Budget" class="g-table-cell" style="width:210px;">
-<div class="g-table-column" style="position:absolute;bottom:0;">State regulated dams</div>
+<div data-key="StateRegulatedDam" class="g-table-cell" style="width:210px;">
+<div class="g-table-column" style="position: absolute;padding-left: 2.5em ;bottom:0;">State regulated dams</div>
 </div>
 
-<div data-key="Budget" class="g-table-cell" style="width:210px;">
-<div class="g-table-column" style="position:absolute;bottom:0;">Budget</div>
+<div data-key="Budget" class="g-table-cell">
+<div class="g-table-column" style="position: absolute;padding-left: 2px;bottom:0;">Budget(thousand)</div>
+
+<!-- <div data-key="Staff" class="g-table-cell" style="width:210px;">
+<div class="g-table-column" style="position:absolute;bottom:0;">Staff</div> -->
 </div>
 
 <!-- <div data-key="Budget" class="g-table-column" style="font-size:13px;line-height:32px;">NID dams<div>
@@ -537,6 +560,7 @@ Click a column header to sort.
 <div class="g-table-body g-table-body-states"></div>
 </div>
 </div>
+
 <script src="https://static01.nyt.com/newsgraphics/2013/09/24/health-care-premiums/fa87fdc4145b4667df3cf9db68a19325f19a884d/lib.js"></script>
 <script>(function() {
 
@@ -552,12 +576,12 @@ var columns = [
 var sortKey = "Budget",
 sortOrder = d3.ascending;
 
-var formatCurrency = d3.format("$,.0f"),
+var formatCurrency = d3.format(",.0f"),
 formatNumber = d3.format(",.0f");
 
 
 var x = d3.scale.linear()
-.domain([0, 13100])
+.domain([0, 13711])
 .range([0, 320]);
 // .domain([0, 51000000)
 // .range([0, 320]);
@@ -639,4 +663,105 @@ d.Budget = +d.Budget;
 return d;
 }
 
+
 })()</script>
+</div>
+</div>
+
+<div class="single">
+  <!-- 1-2-3 PANEL GRAPHIC -->
+
+    <div id="graphic">
+      <div class="graphic">
+          <h4>What if the bills to strengthen dam regulation had been passed?</h4>
+          <!-- LEAVE THIS PART ALONE...IT SETS UP THE NUMBERING AT THE TOP AUTOMATICALLY -->
+          						<div class="tab-wrapper">
+          						    <div id="panel_tabs" class="tab-nav"></div>
+          						    <div class="tab-nav">
+          						       <a id="next_panel" href="#">Next&nbsp;&raquo;</a>
+          						    </div>
+          						    <div class="clear"></div>
+          						</div>
+
+          						<div class="panel-line"></div>
+
+          						<!-- PUT YOUR INFORMATION IN THIS SECTION. COPY THE WHOLE PANEL DIV IF YOU NEED TO ADD ANOTHER PANEL AND PASTE IT BELOW THE LAST PANEL IN THIS GROUP -->
+                      <div id="panel_graphic">
+      								<div class="panel">
+      									<p class="body">The state statutes exempt the dams that are less than 35 feet tall, agriculture dams and federal-regulated dams. Red circles represent high-hazard dams while pink circles represent regulated dams. Currently only 697 dams are regulated in Missouri.</p>
+      									<img src="image/reg.jpg" alt=""/>
+      								</div>
+
+      								<div class="panel">
+      									<p class="body">If SB 1236 sponsered by Kevin Engler had been passed in 2007, regulated dams would have increased to 2838.</p>
+      									<img src="image/sb1236.jpg" alt=""/>
+      								</div>
+
+      								<div class="panel">
+      									<p class="body">If HB 1994 sponserd by Walt Bivins had been passed in 2008, regulated dams would have increased to 2747.</p>
+      									<img src="image/hb1994.jpg" alt=""/>
+
+                        <p class="body">However, Missouri Farm Bureau Federation & Missouri Land Improvement Contractors Association opposed to the bills to modify the dam safety law. The current state statutes exempt the agriculture dams. The last proposal to strengthen dam regulation failed in 2009.</p>
+      								</div>
+
+          								<!-- <div class="panel">
+          									<p class="body">Tell us more here about what is going on in this slide.</p>
+          									<img src="images/dow3.jpg" alt=""/>
+          								</div>
+
+          								<div class="panel">
+          									<p class="body">Same thing here and here about this slide.</p>
+          									<img src="images/dow4.jpg" alt=""/>
+          								</div> -->
+          						</div>
+          				</div>
+          			</div>
+
+          			<script>
+
+          			                if ($('#graphic').find('#panel_graphic').length > 0){
+                                      $('#graphic').find('#panel_graphic').cycle({
+                                          fx:     'fade',
+                                          speed:  250,
+                                          timeout:0,
+                                          nowrap: true,
+                                          next:   '#next_panel',
+                                          pager:  '#panel_tabs'
+                                      });
+                                      $('#next_panel').click(function() {
+                                          var num_panels = $(this).parent().siblings('#panel_tabs').find('a').length,
+                                              curr_idx = $(this).parent().siblings('#panel_tabs').find('.activeSlide').index();
+
+                                          if (num_panels-1 == curr_idx) {
+                                              if ($(this).hasClass('last')) {
+                                                  $(this).parent().siblings('#panel_tabs').find('a').first().click();
+                                                  $(this).removeClass('last').html('Next&nbsp;&raquo;');
+                                              } else {
+                                                  $(this).addClass('last').html('Start over');
+                                              }
+                                          } else {
+                                              $(this).removeClass('last').html('Next&nbsp;&raquo;');
+                                          }
+                                      });
+
+                                      $('#panel_tabs').children('a').click(function() {
+                                          if ($(this).index() == $(this).parent().children('a').length-1) {
+                                              $('#next_panel').addClass('last').html('Start over');
+                                          } else {
+                                              $('#next_panel').removeClass('last').html('Next&nbsp;&raquo;');
+                                          }
+                                      });
+                                  }
+                      </script>
+          		<!-- END 1-2-3 PANEL GRAPHIC -->
+          		</div>
+
+          		<!-- ///////////////////////END SINGLE LAYER///////////////////////////-->
+
+
+          <!-- ////////////////////////////////////////////////////////END OF GRAPHIC TEMPLATE ELEMENTS ///////////////////////////////////////////////////////// -->
+
+
+          	</div>
+          </body>
+          </html>
