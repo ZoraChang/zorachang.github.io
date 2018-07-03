@@ -3,6 +3,15 @@
 [
 
   {
+     "pub":"Interactive Graphic-History of Women's Suffrage",
+     "link":"https://zorachang.github.io/portfolio/Missouri%20hidden%20dams/experiment%20-%20Copy.html",
+     "imglink":"image/womensuffrage.gif",
+     "type":"Data Visualization",
+     "description": "An interactive world map to show the change of women's suffrage across time and space, built with D3"
+   },
+
+
+  {
      "pub":"Interactive Graphic-Hidden Dams",
      "link":"https://zorachang.github.io/portfolio/Missouri%20hidden%20dams/experiment%20-%20Copy.html",
      "imglink":"image/hiddendam.PNG",
