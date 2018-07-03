@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>d3 choropleth map</title>
+    <style>
+
+
+
+    #headline{
+      font-family: Digital, Arial, Helvetica, sans-serif;
+      font-weight: bold;
+      font-size: 2em;
+      text-align: center;
+
+
+    }
+
+  
+
+      #wrapper {
+          width: 960px;
+          
+          margin: -30px auto 0;
+
+      }
+
+      #map {
+          width: 960px;
+          height: 580px;
+          position: relative;
+          margin: 0 auto 0 auto; 
+      }
+      .stroke {
+        fill: none;
+        stroke: #888;
+        stroke-width: 2px;
+      }
+      
+      .fill {
+        fill: #fff;
+      }
+      
+      .graticule {
+        fill: none;
+        stroke: #777;
+        stroke-width: .5px;
+        stroke-opacity: .5;
+      }
+      
+      .land {
+        fill: #222;
+      }
+      
+      .boundary {
+        fill: none;
+        stroke: #fff;
+        stroke-width: .5px;
+      }
+      .country {
+          /*fill: steelblue;*/
+          stroke: white;
+      }
+
+      .country:hover {
+  stroke: #646464;
+  stroke-width:2px;
+  stroke-linejoin: round;
+}
+
+
+.d3-tip {
+  font-weight: bold;
+  padding: 0.5rem;
+  border: 1px solid silver;
+  color: #222;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px 0px #a6a6a6;
+  opacity: 0.9;
+  
+}
+
+
+      .d3-tip {
+        line-height: 1;
+        font-weight: bold;
+        padding: 12px;
+        background: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        border-radius: 2px;
+      }
+
+      /* Creates a small triangle extender for the tooltip */
+      .d3-tip:after {
+        box-sizing: border-box;
+        display: inline;
+        font-size: 10px;
+        width: 100%;
+        line-height: 1;
+        color: rgba(0, 0, 0, 0.8);
+        content: "\25BC";
+        position: absolute;
+        text-align: center;
+      }
+      /* Style northward tooltips differently */
+      .d3-tip.n:after {
+        margin: -1px 0 0 0;
+        top: 100%;
+        left: 0;
+      }
+
+
+   /*   #ui {
+          position: absolute;
+          left: 8px;
+          top:85%;
+      }
+      #ui output {
+          padding: 3px 6px;
+          margin: 0 0 8px 0;
+          width: 40px;
+          border: 1px solid gray;
+          display: block;
+          text-align: center;
+      }
+      #ui input {
+          width: 1000px;
+      }*/
+
+   /*   
+.d3-tip{   
+  position: absolute;           
+  text-align: left;                 
+  padding: 2px;           
+  font: 12px sans-serif;        
+  background: #bbb;   
+  border: 0px;      
+  border-radius: 8px;           
+  pointer-events: none;         
+}*/
+/*  .d3-tip {
+  line-height: 1;
+  position: absolute;
+  font-weight: bold;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  border-radius: 2px;
+}*/
+
+/* Creates a small triangle extender for the tooltip */
+ /* .d3-tip:after {
+  box-sizing: border-box;
+  display: inline;
+  font-size: 10px;
+  width: 100%;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.8);
+  content: "\25BC";
+  position: absolute;
+  text-align: center;
+}*/
+/* Style northward tooltips differently */
+/*  .d3-tip.n:after {
+  margin: -1px 0 0 0;
+  top: 100%;
+  left: 0;
+}*/
+
+
+/*
+.d3-tip span {
+    color: #ff00c7;
+  }*/
+
+#ui {
+    position: absolute;
+   
+    top:0 px;
+   /* top:85%;*/
+    
+}
+#ui output {
+    padding: 3px 6px;
+    margin: 0 0 8px 0;
+    width: 120px;
+   /* border: 1px solid gray;*/
+    display: block;
+    text-align: center;
+    font-style:italic;
+    font-size: 2em;
+
+    /*background-color:rgba(0,0,0,0.5);*/
+
+}
+#ui input {
+    width: 130px;
+}
+
+ #play, #clock {
+    display: block;
+ margin: 0 0 0 2em;
+    
+  width: 4em;
+  margin-top: 2em;
+  top: 50%;
+      }
+
+
+      #play {
+
+        font-size: 1em;
+        font-weight: bold;
+        font-family: Digital, Arial, Helvetica, sans-serif;
+        
+      }
+      #clock {
+        left: 65px;
+      }
+/*
+
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+#sequence {
+  -webkit-appearance: none;
+  width: 900px;
+  height: 10px;
+  border-radius: 5px;
+  background: #ccc;
+  outline: none;
+}
+
+#sequence::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+  -webkit-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+}
+#sequence::-webkit-slider-thumb:hover {
+  background: #000000;
+}
+#sequence:active::-webkit-slider-thumb {
+  background: #000000;
+}
+#sequence::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border: 0;
+  border-radius: 50%;
+  background: #000000;
+  cursor: pointer;
+  -webkit-transition: background 0.15s ease-in-out;
+  transition: background 0.15s ease-in-out;
+}
+#sequence::-moz-range-thumb:hover {
+  background: #000000;
+}
+#sequence:active::-moz-range-thumb {
+  background: #000000;
+}
+#output {
+  float: right;
+  display: inline-block;
+  position: relative;
+  width: 200px;
+  color: #fff;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  border-radius: 3px;
+  background: #000000;
+  padding: 3px 6px;
+  margin: 0 0 8px 0;
+}
+
+#output:after {
+  position: absolute;
+  top: 8px;
+  left: -7px;
+  width: 0;
+  height: 0;
+  border-top: 7px solid transparent;
+  border-right: 7px solid #000000;
+  border-bottom: 7px solid transparent;
+  content: "";
+}
+
+::-moz-range-track {
+  background: #ccc;
+  border: 0;
+}
+
+input::-moz-focus-inner {
+  border: 0;
+}
+*/
+     
+    </style>
+</head>
+
+<body>
+  <div id="headline">
+      Women Suffrage Map
+    </div>
+   <!--  <p><b><font size="6" face="Digital, Arial, Helvetica, sans-serif" left:50% color= #000000> Women Suffrage Map</font></b></p> -->
+  
+  <div id="wrapper">  
+      <div id="map">
+        <button id="play">play</button>
+      <!-- <span id="clock">year</span> -->
+        <div id="ui">
+            <output id="output">1893</output>
+
+            <br>
+            <input id="sequence" type='range' min="1893", max="2011", value="1893", step="1" >
+        </div>
+      </div>
+  </div>
+
+  <!-- <div id="wrapper">  
+      <div id="map"></div>
+      <button id="play">play</button>
+      <span id="clock">year</span>
+  </div> -->
+
+  <script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="http://d3js.org/d3.geo.projection.v0.min.js"></script>
+<script src="http://d3js.org/queue.v1.min.js"></script>
+<script src="http://d3js.org/topojson.v1.min.js"></script>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script src="https://unpkg.com/simple-statistics@4.1.0/dist/simple-statistics.min.js"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+<script>
+
+  var width, height, projection, path, graticule, svg, attributeArray = [], currentAttribute = 0, playing = false;
+
+
+  var tip = d3.tip()
+  .attr('class', 'd3-tip')
+  .offset([-10, 0])
+  .html(function(d) {
+    return "<strong>"+d.properties.admin+"</strong> <span style='color:white'>";
+    
+    })
+
+
+
+function init() {
+  setMap();
+  animateMap();
+}
+function setMap() {
+  width = 960, height = 580;  // map width and height, matches 
+  projection = d3.geo.eckert5()   // define our projection with parameters
+    .scale(170)
+    .translate([width / 2, height / 2])
+    .precision(.1);
+  path = d3.geo.path()  // create path generator function
+      .projection(projection);  // add our define projection to it
+  graticule = d3.geo.graticule(); // create a graticule
+  svg = d3.select("#map").append("svg")   // append a svg to our html div to hold our map
+      .attr("width", width)
+      .attr("height", height);
+
+  svg.call(tip);
+
+  svg.append("defs").append("path")   // prepare some svg for outer container of svg elements
+      .datum({type: "Sphere"})
+      .attr("id", "sphere")
+      .attr("d", path);
+  svg.append("use")   // use that svg to style with css
+      .attr("class", "stroke")
+      .attr("xlink:href", "#sphere");
+  svg.append("path")    // use path generator to draw a graticule
+      .datum(graticule)
+      .attr("class", "graticule")
+      .attr("d", path);
+  loadData();  // let's load our data next
+}
+
+
+
+function loadData() {
+
+  queue()   // queue function loads all external data files asynchronously 
+    .defer(d3.json, "world-topo.json")  // our geometries
+    .defer(d3.csv, "voteData.csv")  // and associated data in csv file
+    .await(processData);   // once all files are loaded, call the processData function passing
+                           // the loaded objects as arguments
+}
+
+
+
+function processData(error,world,voteData) {
+//   // function accepts any errors from the queue function as first argument, then
+//   // each data object in the order of chained defer() methods above
+
+  var countries = world.objects.countries.geometries;  // store the path in variable for ease
+  for (var i in countries) {    // for each geometry objects
+    for (var j in voteData) {  // for each row in the CSV
+      if(countries[i].properties.id == voteData[j].id) {   // if they match
+        for(var k in voteData[j]) {   // for each column in the a row within the CSV
+          if(k != 'id' && k != 'name') {  // let's not add the name or id as props since we already have them
+            if(attributeArray.indexOf(k) == -1) { 
+               attributeArray.push(k);  // add new column headings to our array for later
+            }
+            countries[i].properties[k] = Number(voteData[j][k])// add each CSV column key/value to geometry object
+            // parseFloat(Math.round(countries[i].properties[k] * 10000) / 10000).toFixed(4)
+          }
+        }
+        break;  // stop looking through the CSV since we made our match
+      }
+    }
+  }
+
+
+  d3.select('#clock').html(attributeArray[currentAttribute]);  // populate the clock initially with the current year
+  drawMap(world);  // let's mug the map now with our newly populated data object
+}
+
+
+
+function drawMap(world) {
+     svg.call(tip);
+   svg.selectAll(".country")   // select country objects (which don't exist yet)
+      .data(topojson.feature(world, world.objects.countries).features)  // bind data to these non-existent objects
+      .enter().append("path") // prepare data to be appended to paths
+      .attr("class", "country") // give them a class for styling and access later
+      .attr("id", function(d) { return "code_" + d.properties.id; }, true)  // give each a unique id for access later
+      .attr("admin", function(d) { return d.properties.admin; }, true)  // give each a unique name for access later
+      .attr("d", path) // create them using the svg path generator defined above
+    
+      .on('mouseover', tip.show)
+      .on('mouseout', tip.hide);
+
+    // var dataRange = getDataRange(); // get the min/max values from the current year's range of data values
+    d3.selectAll('.country')  // select all the countries
+    .attr('fill', function(d) {
+        return getColor(d.properties[attributeArray[currentAttribute]]);  // give them an opacity value based on their current value
+    });
+}
+
+
+
+function sequenceMap() {
+  
+    // var dataRange = getDataRange(); // get the min/max values from the current year's range of data values
+    d3.selectAll('.country').transition()  //select all the countries and prepare for a transition to new values
+      .duration(750)  // give it a smooth time period for the transition
+      .attr('fill', function(d) {
+        return getColor(d.properties[attributeArray[currentAttribute]]);  // the end color value
+      })
+}
+function getColor(d) {
+  // var color = d3.scale.linear() // create a linear scale
+  //   .domain([valuesIn[0],valuesIn[1]])  // input uses min and max values
+  //   .range([.3,1]);   // output for opacity between .3 and 1 %
+
+    var color = d3.scale.ordinal()
+     .domain([0, 1, 2])
+     .range(["#D6D6D6", "#B9E1FF", "#009BFF"]);
+  return color(d);  // return that number to the caller
+}
+
+
+
+function getDataRange() {
+  // function loops through all the data values from the current data attribute
+  // and returns the min and max values
+  var min = Infinity, max = -Infinity;  
+  d3.selectAll('.country')
+    .each(function(d,i) {
+      var currentValue = d.properties[attributeArray[currentAttribute]];
+      if(currentValue <= min && currentValue != -99 && currentValue != 'undefined') {
+        min = currentValue;
+      }
+      if(currentValue >= max && currentValue != -99 && currentValue != 'undefined') {
+        max = currentValue;
+      }
+  });
+  return [min,max];  //boomsauce
+}
+
+// IIFE to attach listeners to range UI
+(function() {
+    // select the output 
+    var output = d3.select("#output");
+
+    // select range
+    d3.select('#sequence')
+        .on('input', function(d) { // when it changes
+            output.html(+this.value)  // update the output, with this.value as the year
+            attributeArray[currentAttribute]=this.value;
+            loadData()
+            ; // update  the map
+        });
+})();
+
+function animateMap() {
+  var timer;  // create timer object
+  d3.select('#play')  
+    .on('click', function() {  // when user clicks the play button
+      if(playing == false) {  // if the map is currently playing
+        timer = setInterval(function(){   // set a JS interval
+          if(currentAttribute < attributeArray.length-1) {  
+              currentAttribute +=1;  // increment the current attribute counter
+          } else {
+              currentAttribute = 0;  // or reset it to zero
+          }
+          
+          sequenceMap();  // update the representation of the map 
+          d3.select('#output')
+          .html(attributeArray[currentAttribute]);  // update the clock
+        }, 500);
+      
+        d3.select(this).html('stop');  // change the button label to stop
+        playing = true;   // change the status of the animation
+      } else {    // else if is currently playing
+        clearInterval(timer);   // stop the animation by clearing the interval
+        d3.select(this).html('play');   // change the button label to play
+        playing = false;   // change the status again
+      }
+  });
+}
+window.onload = init();  // magic starts here
+  
+</script>
+</body>
+</html>
