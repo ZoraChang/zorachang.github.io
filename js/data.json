@@ -4,7 +4,7 @@
 
   {
      "pub":"USA Today-History of Women's Suffrage",
-     "link":"https://zorachang.github.io/portfolio/Women%20suffrage/",
+     "link":"https://zorachang.github.io/portfolio/women%20suffrage/index.html",
      "imglink":"image/womensuffrage.gif",
      "type":"Data Visualization",
      "description": "An interactive world map to show the change of women's suffrage across time and space, built with D3"
